@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose Your Pet</title>
+  <style>
+    /* Page Background */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to right, white, #f87171); /* white to red gradient */
+  padding-top: 80px;
+}
+
+/* Title Styling */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
+/* Pet Grid Layout */
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 16px 9rem;
+  background: linear-gradient(to right, white, #f87171); /* matches page bg */
+}
+
+/* Individual Pet Item */
+.pet-item {
+  padding: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+/* Hover Effect on Image */
+.pet-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+
+/* Scale Image on Hover */
+.pet-item:hover img {
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="profile-page">
+    <h1 class="title">Choose the pet you like</h1>
+
+    <div class="pet-grid">
+        <div class="pet-item" data-pet="dog">
+          <img src="assets/dog.png" alt="dog">
+        </div>
+        <div class="pet-item" data-pet="bird">
+          <img src="assets/bird.png" alt="bird">
+        </div>
+        <div class="pet-item" data-pet="cat">
+          <img src="assets/cat.png" alt="cat">
+        </div>
+        <div class="pet-item" data-pet="panda">
+          <img src="assets/panda.png" alt="panda">
+        </div>
+        <div class="pet-item" data-pet="dragon">
+          <img src="assets/dainosor.png" alt="dragon">
+        </div>
+        <div class="pet-item" data-pet="fawn">
+          <img src="assets/deer.png" alt="fawn">
+        </div>
+        <div class="pet-item" data-pet="chicken">
+          <img src="assets/lukku.png" alt="chicken">
+        </div>
+      </div>
+      
+  </div>
+
+</body>
+</html>

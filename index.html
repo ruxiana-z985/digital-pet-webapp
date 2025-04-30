@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auth App</title>
+  <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-image: url('assets/g1.jpg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.75rem;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #dc2626;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #b91c1c;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 1rem;
+      color: #333;
+      font-size: 0.9rem;
+    }
+
+    .toggle a {
+      color: #dc2626;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 id="formTitle">Sign Up</h2>
+
+    <!-- Signup Form -->
+    <form id="signupForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="signupEmail" required />
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="signupUsername" required />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="signupPassword" required />
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="hidden">
+      <div class="form-group">
+        <label>Email or Username</label>
+        <input type="text" id="loginIdentifier" required />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPassword" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="toggle">
+      <span id="toggleText">Already have an account? <a id="toggleLink">Login</a></span>
+    </div>
+  </div>
+
+  <script>
+    // Toggle between forms
+    const signupForm = document.getElementById("signupForm");
+    const loginForm = document.getElementById("loginForm");
+    const toggleLink = document.getElementById("toggleLink");
+    const formTitle = document.getElementById("formTitle");
+    const toggleText = document.getElementById("toggleText");
+
+    toggleLink.addEventListener("click", () => {
+      const isSignup = signupForm.classList.contains("hidden");
+      signupForm.classList.toggle("hidden");
+      loginForm.classList.toggle("hidden");
+      formTitle.textContent = isSignup ? "Sign Up" : "Login";
+      toggleText.innerHTML = isSignup
+        ? `Already have an account? <a id="toggleLink">Login</a>`
+        : `Don’t have an account? <a id="toggleLink">Sign Up</a>`;
+      // re-bind toggle after replacement
+      document.getElementById("toggleLink").addEventListener("click", () => toggleLink.click());
+    });
+
+    // Encode Function
+    function encode(input) {
+      let encoded = "";
+      for (let char of input) {
+        const ascii = char.charCodeAt(0);
+        const encoding = ["hex", "binary", "octal"][Math.floor(Math.random() * 3)];
+        switch (encoding) {
+          case "hex":
+            encoded += ascii.toString(16) + " ";
+            break;
+          case "binary":
+            encoded += ascii.toString(2) + " ";
+            break;
+          case "octal":
+            encoded += ascii.toString(8) + " ";
+            break;
+        }
+      }
+      return encoded.trim();
+    }
+
+    // Signup Logic
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("signupEmail").value;
+      const username = document.getElementById("signupUsername").value;
+      const password = document.getElementById("signupPassword").value;
+
+      const salt = Math.random().toString(16).slice(2, 8);
+      const secret = `${username}:${encode(password)}:${salt}`;
+      const hash = CryptoJS.SHA256(secret).toString();
+
+      localStorage.setItem(username, JSON.stringify({ email, hash, salt }));
+
+      alert("Signup successful!");
+      signupForm.reset();
+    });
+
+    // Login Logic
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const identifier = document.getElementById("loginIdentifier").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const storedData = JSON.parse(localStorage.getItem(identifier) || '{}');
+      if (!storedData || !storedData.hash || !storedData.salt) {
+        alert("User not found!");
+        return;
+      }
+
+      const { salt, hash: storedHash } = storedData;
+      const secret = `${identifier}:${encode(password)}:${salt}`;
+      const hash = CryptoJS.SHA256(secret).toString();
+
+      if (hash === storedHash) {
+        alert("Login successful!");
+      } else {
+        alert("Invalid credentials!");
+      }
+    });
+  </script>
+</body>
+</html>
