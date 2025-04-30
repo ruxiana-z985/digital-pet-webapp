@@ -1,8 +1,8 @@
 // whole2.js (combined full logic with audio support)
 
-import { triggerAnimation} from "./main.js";
-import { petConfig } from "./petConfig.js";
-const apiKey='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';
+import { triggerAnimation} from "../public/js/main.js";
+import { petConfig } from "../public/js/petConfig.js";
+const apiKey = process.env.OPENROUTER_API_KEY;
 
 const petType = localStorage.getItem('petType');
 const username = localStorage.getItem('loggedInUser');
@@ -388,7 +388,7 @@ async function textToSpeech(text) {
     const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
       method: 'POST',
       headers: {
-        'xi-api-key': 'sk_e510e0f2d9f5ecf074b53e2b3a5f12a7f10d38d742824cb1',
+        'xi-api-key': process.env.ELEVENLABS_API_KEY,
         'Content-Type': 'application/json',
         'Accept': 'audio/mpeg'
       },

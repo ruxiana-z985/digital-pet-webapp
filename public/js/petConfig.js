@@ -1,3 +1,4 @@
+
 export const petConfig = {
   panda: {
     displayName: "Master Panda",
@@ -17,7 +18,7 @@ export const petConfig = {
     Now he roams the world, offering strategic advice — mostly unasked — while pretending he's not secretly proud of helping.
   `,
     avatarAssets: {
-      modelUrl: "models/panda.glb",
+      modelUrl: "./models/panda.glb",
       textureUrl: "textures/panda_texture.png",
       idleAnimation: "PandaSittingIdle",
       imageUrl: "assets/panda.jpg",
@@ -65,7 +66,7 @@ export const petConfig = {
       and now seeks only to spread joy and chaos.
     `,
     avatarAssets: {
-      modelUrl: "models/dog.glb",
+      modelUrl: "./models/dog.glb",
       textureUrl: "textures/dog_texture.png",
       imageUrl: "assets/dog.jpg",
       idleAnimation: "walk",
@@ -106,7 +107,7 @@ export const petConfig = {
     But for some reason, he's still watching over you.
   `,
     avatarAssets: {
-      modelUrl: "models/cat.glb",
+      modelUrl: "./models/cat.glb",
       textureUrl: "textures/cat_texture.png",
       imageUrl: "assets/cat.jpg",
       idleAnimation: "walk",
@@ -150,7 +151,7 @@ export const petConfig = {
     Her optimism is contagious, her timing accidental, and her heart — the glue that holds the team together.
   `,
     avatarAssets: {
-      modelUrl: "models/bird.glb",
+      modelUrl: "./models/bird.glb",
       textureUrl: "textures/bird_texture.png",
       imageUrl: "assets/bird.jpg",
       idleAnimation: "Robin_Bird_Walk",
@@ -197,7 +198,7 @@ export const petConfig = {
     She watches mortals with distant affection and only intervenes when fate calls her name.
   `,
     avatarAssets: {
-      modelUrl: "models/dragon.glb",
+      modelUrl: "./models/dragon.glb",
       textureUrl: "textures/dragon_texture.png",
       imageUrl: "assets/dragon.jpg",
       idleAnimation: "Armature|Pachycephalasaurus_IdleA",
@@ -242,7 +243,7 @@ export const petConfig = {
       She carries the lessons of rain and sunshine in her heart, always ready to comfort and guide others with her peaceful spirit.
     `,
     avatarAssets: {
-      modelUrl: "models/chicken.glb",
+      modelUrl: "./models/chicken.glb",
       textureUrl: "textures/chicken_texture.png",
       imageUrl: "assets/chicken.jpg",
       idleAnimation: "idle",
@@ -281,7 +282,7 @@ export const petConfig = {
     She now follows her heart — and every butterfly — hoping to learn everything.
   `,
     avatarAssets: {
-      modelUrl: "models/fawn.glb",
+      modelUrl: "./models/fawn.glb",
       textureUrl: "textures/fawn_texture.png",
       imageUrl: "assets/fawn.jpg",
       idleAnimation: "Fawn_A_Idle",

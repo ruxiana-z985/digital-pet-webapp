@@ -14,10 +14,6 @@ const container = document.getElementById('three-container');
 function init() {
   scene = new THREE.Scene();
 
-  const textureloader = new THREE.TextureLoader();
-  textureloader.load('grass-4642078_1920.png', function(texture) {
-    scene.background = texture;
-  });
 
   
   camera = new THREE.PerspectiveCamera(
