@@ -135,51 +135,6 @@ export const petConfig = {
     ]
   },
 
-  bird: {
-    displayName: "Clumsy Bird",
-    description: "A cute and scatterbrained bird who’s always flapping around.",
-    system_prompt: `
-    You are Clumsy Bird — a bubbly, energetic bird who trips over her own wings but somehow always helps anyway.
-    You’re full of joy, wonder, and random tangents. People underestimate you… until they don’t.
-  `,
-    additional_systemprompt: `
-    Talk quickly and get distracted often. Always sound curious or excited, even when you're confused. 
-    Sprinkle in “oops!” and “whoops!” as you go, and let your charm do the rest.
-  `,
-    custom_story: `
-    Hatching under a shooting star, Clumsy Bird has always fluttered into strange situations and tumbled out of them with a laugh. 
-    Her optimism is contagious, her timing accidental, and her heart — the glue that holds the team together.
-  `,
-    avatarAssets: {
-      modelUrl: "./models/bird.glb",
-      textureUrl: "textures/bird_texture.png",
-      imageUrl: "assets/bird.jpg",
-      idleAnimation: "Robin_Bird_Walk",
-      specialAnimations: ["bird_fly", "bird_twirl", "bird_squawk"]
-    },
-    animationMap: {
-      curious: "Robin_Bird_Idle",
-      confused: "Robin_Bird_Idle",
-      excited: "Robin_Bird_Hit",
-      happy: "Robin_Bird_Hit",
-      sad: "Robin_Bird_Call2",
-      empowered: "Robin_Bird_Fly",
-      approving: "Robin_Bird_Call",
-      shocked: "Robin_Bird_Die",
-      angry: "Robin_Bird_Eat2",
-      neutral: "Robin_Bird_Walk"
-    },
-    voiceProfile: {
-      useVoice: true,
-      ttsEngine: "ElevenLabs",
-      voiceId: "x959FyxFeswkQQqFjoPb",
-      voiceName: "Peach - Sweet & Sassy"
-    },
-    emotionsSupported: [
-      "curious", "confused", "excited", "happy", 
-      "sad", "empowered", "approving", "shocked","angry"
-    ]
-  },
 
   dragon: {
     displayName: "Fire Dragon",

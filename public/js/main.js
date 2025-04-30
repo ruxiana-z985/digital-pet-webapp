@@ -13,6 +13,7 @@ const container = document.getElementById('three-container');
 
 function init() {
   scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xffffff);
 
 
   
