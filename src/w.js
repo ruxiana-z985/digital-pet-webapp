@@ -154,7 +154,7 @@ async function getEmotionAnalysis(text) {
           "Content-Type": "application/json"
         },
       body: JSON.stringify({
-        model: 'openai/gpt-3.5-turbo',
+        model: 'openchat/openchat-7b',
         messages: [
           { role: 'system', content: SENTIMENT_PROMPT },
           { role: 'user', content: text }
@@ -178,7 +178,7 @@ async function getAIResponse(input) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: 'openai/gpt-3.5-turbo',
+      model: 'openchat/openchat-7b',
       messages: [
         ...chatHistory,
         { role: 'user', content: input },
@@ -215,7 +215,7 @@ async function updateLongTermMemory(text) {
           "Content-Type": "application/json"
         },
       body: JSON.stringify({
-        model: 'openai/gpt-3.5-turbo',
+        model: 'openchat/openchat-7b',
         messages: [
           { role: 'system', content: MEMORY_PROMPT },
           { role: 'user', content: text }

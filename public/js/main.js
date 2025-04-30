@@ -111,15 +111,15 @@ export function triggerAnimation(sentiment) {
     console.log('Model not loaded yet');
     return;
   }
-
+  const idleAni=petConfig[petType].avatarAssets.idleAnimation
   const animationMap = petConfig[petType].animationMap;
-  const animationName = animationMap[sentiment] || 'Fawn_A_Idle';
+  const animationName = animationMap[sentiment] || idleAni;
 
   if (actions[animationName]) {
     playAnimation(animationName);
   } else {
     console.warn(`Animation ${animationName} not found`);
-    if (actions['Fawn_A_Idle']) playAnimation('Fawn_A_Idle');
+    if (actions[idleAni]) playAnimation(idleAni);
   }
 }
 
