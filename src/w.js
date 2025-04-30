@@ -151,8 +151,8 @@ async function getEmotionAnalysis(text) {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${apiKey}`,
-          "Referer": "https://avriruxired.netlify.app/",
-          "X-Title": "Digital Friend",
+          // "Referer": "https://avriruxired.netlify.app/",
+          // "X-Title": "Digital Friend",
           "Content-Type": "application/json"
         },
       body: JSON.stringify({
@@ -177,8 +177,8 @@ async function getAIResponse(input) {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${apiKey}`,
-      "Referer": "https://avriruxired.netlify.app/",
-      "X-Title": "Digital Friend",
+      // "Referer": "https://avriruxired.netlify.app/",
+      // "X-Title": "Digital Friend",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
@@ -216,8 +216,8 @@ async function updateLongTermMemory(text) {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${apiKey}`,
-          "Referer": "https://avriruxired.netlify.app/",
-          "X-Title": "Digital Friend",
+          // "Referer": "https://avriruxired.netlify.app/",
+          // "X-Title": "Digital Friend",
           "Content-Type": "application/json"
         },
       body: JSON.stringify({
