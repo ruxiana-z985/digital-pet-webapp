@@ -153,7 +153,8 @@
       alert("Signup successful!");
   
       signupForm.reset();
-      window.location.href = "profile.html";
+      window.location.href = "./public/profile.html";
+      
 
     });
 
@@ -175,7 +176,7 @@
       if (hash === storedHash) {
         alert("Login successful!");
         loginForm.reset();
-        window.location.href = "profile.html";
+        window.location.href = "./public/profile.html";
 
       } else {
         alert("Invalid credentials!");
