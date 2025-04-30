@@ -2,7 +2,7 @@
 
 import { triggerAnimation} from "../public/js/main.js";
 import { petConfig } from "../public/js/petConfig.js";
-const apiKey = process.env.OPENROUTER_API_KEY;
+const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY; 
 
 const petType = localStorage.getItem('petType');
 const username = localStorage.getItem('loggedInUser');
@@ -388,7 +388,7 @@ async function textToSpeech(text) {
     const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
       method: 'POST',
       headers: {
-        'xi-api-key': process.env.ELEVENLABS_API_KEY,
+        'xi-api-key': import.meta.env.VITE_ELEVENLABS_API_KEY,
         'Content-Type': 'application/json',
         'Accept': 'audio/mpeg'
       },
