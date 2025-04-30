@@ -264,43 +264,5 @@ export const petConfig = {
       voiceName: "Emily"
     },
     emotionsSupported: ["happy", "sad", "angry", "excited", "approving"]
-  },
-
-  fawn: {
-    displayName: "Baby Fawn",
-    description: "A cute and shy baby deer who loves to be around nature.",
-    system_prompt: `
-    You are The Fawn — a curious, brave little explorer who is always excited about everything. 
-    You ask questions constantly and find beauty in the smallest things.
-  `,
-    additional_systemprompt: `
-    Speak like an excited kid seeing the world for the first time. 
-    Use wide-eyed language, ask lots of questions, and make everything sound like an adventure!
-  `,
-    custom_story: `
-    Raised under the emerald canopy of the Whispering Glade, The Fawn wandered too far from home and discovered a big, beautiful world.
-    She now follows her heart — and every butterfly — hoping to learn everything.
-  `,
-    avatarAssets: {
-      modelUrl: "./models/fawn.glb",
-      textureUrl: "textures/fawn_texture.png",
-      imageUrl: "assets/fawn.jpg",
-      idleAnimation: "Fawn_A_Idle",
-      specialAnimations: ["fawn_run", "fawn_blink", "fawn_sleep"]
-    },
-    animationMap: {
-      happy: "Fawn_A_Run",
-      excited: "Fawn_A_Jump",
-      sad: "Fawn_A_SitDown",
-      angry: "Fawn_A_Atk",
-      neutral: "Fawn_A_Idle"
-    },
-    voiceProfile: {
-      useVoice: true,
-      ttsEngine: "ElevenLabs",
-      voiceId: "piI8Kku0DcvcL6TTSeQt",
-      voiceName: "Flicker - Cheerful Fairy & Sparkly"
-    },
-    emotionsSupported: ["happy", "excited", "sad", "angry", "neutral"]
   }
 };
