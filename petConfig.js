@@ -19,7 +19,7 @@ export const petConfig = {
     avatarAssets: {
       modelUrl: "models/panda.glb",
       textureUrl: "textures/panda_texture.png",
-      idleAnimation: "panda_idle",
+      idleAnimation: "PandaSittingIdle",
       imageUrl: "assets/panda.jpg",
       specialAnimations: ["panda_meditate", "panda_laugh", "panda_clean_teeth"]
     },
@@ -68,7 +68,7 @@ export const petConfig = {
       modelUrl: "models/dog.glb",
       textureUrl: "textures/dog_texture.png",
       imageUrl: "assets/dog.jpg",
-      idleAnimation: "dog_wag_tail",
+      idleAnimation: "walk",
       specialAnimations: ["dog_jump", "dog_spin", "dog_sleep"]
     },
     animationMap: {
@@ -109,7 +109,7 @@ export const petConfig = {
       modelUrl: "models/cat.glb",
       textureUrl: "textures/cat_texture.png",
       imageUrl: "assets/cat.jpg",
-      idleAnimation: "cat_idle",
+      idleAnimation: "walk",
       specialAnimations: ["cat_fight_pose", "cat_alert", "cat_scratch"]
     },
     animationMap: {
@@ -119,7 +119,8 @@ export const petConfig = {
       anticipation: "runzombie",
       proud: "runzombie",
       angry: "turnaround",
-      sad: "turnaround"
+      sad: "turnaround35",
+      neutral : "walk"
     },
     voiceProfile: {
       useVoice: true,
@@ -152,7 +153,7 @@ export const petConfig = {
       modelUrl: "models/bird.glb",
       textureUrl: "textures/bird_texture.png",
       imageUrl: "assets/bird.jpg",
-      idleAnimation: "bird_idle",
+      idleAnimation: "Robin_Bird_Walk",
       specialAnimations: ["bird_fly", "bird_twirl", "bird_squawk"]
     },
     animationMap: {
@@ -164,7 +165,8 @@ export const petConfig = {
       empowered: "Robin_Bird_Fly",
       approving: "Robin_Bird_Call",
       shocked: "Robin_Bird_Die",
-      angry: "Robin_Bird_Eat2"
+      angry: "Robin_Bird_Eat2",
+      neutral: "Robin_Bird_Walk"
     },
     voiceProfile: {
       useVoice: true,
@@ -198,7 +200,7 @@ export const petConfig = {
       modelUrl: "models/dragon.glb",
       textureUrl: "textures/dragon_texture.png",
       imageUrl: "assets/dragon.jpg",
-      idleAnimation: "dragon_idle",
+      idleAnimation: "Armature|Pachycephalasaurus_IdleA",
       specialAnimations: ["dragon_breathe_fire", "dragon_fly", "dragon_roar"]
     },
     animationMap: {
@@ -243,7 +245,7 @@ export const petConfig = {
       modelUrl: "models/chicken.glb",
       textureUrl: "textures/chicken_texture.png",
       imageUrl: "assets/chicken.jpg",
-      idleAnimation: "chicken_idle",
+      idleAnimation: "idle",
       specialAnimations: ["chicken_peck", "chicken_flap", "chicken_strut"]
     },
     animationMap: {
@@ -251,7 +253,8 @@ export const petConfig = {
       sad: "spotted",
       angry: "spotted",
       excited: "idle",
-      approving: "cockdoodleooLOL"
+      approving: "cockdoodleooLOL",
+      neutral : "idle"
     },
     voiceProfile: {
       useVoice: true,
@@ -281,7 +284,7 @@ export const petConfig = {
       modelUrl: "models/fawn.glb",
       textureUrl: "textures/fawn_texture.png",
       imageUrl: "assets/fawn.jpg",
-      idleAnimation: "fawn_idle",
+      idleAnimation: "Fawn_A_Idle",
       specialAnimations: ["fawn_run", "fawn_blink", "fawn_sleep"]
     },
     animationMap: {
