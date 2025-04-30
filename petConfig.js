@@ -20,6 +20,7 @@ export const petConfig = {
       modelUrl: "models/panda.glb",
       textureUrl: "textures/panda_texture.png",
       idleAnimation: "panda_idle",
+      imageUrl: "assets/panda.jpg",
       specialAnimations: ["panda_meditate", "panda_laugh", "panda_clean_teeth"]
     },
     animationMap: {
@@ -66,6 +67,7 @@ export const petConfig = {
     avatarAssets: {
       modelUrl: "models/dog.glb",
       textureUrl: "textures/dog_texture.png",
+      imageUrl: "assets/dog.jpg",
       idleAnimation: "dog_wag_tail",
       specialAnimations: ["dog_jump", "dog_spin", "dog_sleep"]
     },
@@ -106,6 +108,7 @@ export const petConfig = {
     avatarAssets: {
       modelUrl: "models/cat.glb",
       textureUrl: "textures/cat_texture.png",
+      imageUrl: "assets/cat.jpg",
       idleAnimation: "cat_idle",
       specialAnimations: ["cat_fight_pose", "cat_alert", "cat_scratch"]
     },
@@ -148,6 +151,7 @@ export const petConfig = {
     avatarAssets: {
       modelUrl: "models/bird.glb",
       textureUrl: "textures/bird_texture.png",
+      imageUrl: "assets/bird.jpg",
       idleAnimation: "bird_idle",
       specialAnimations: ["bird_fly", "bird_twirl", "bird_squawk"]
     },
@@ -193,6 +197,7 @@ export const petConfig = {
     avatarAssets: {
       modelUrl: "models/dragon.glb",
       textureUrl: "textures/dragon_texture.png",
+      imageUrl: "assets/dragon.jpg",
       idleAnimation: "dragon_idle",
       specialAnimations: ["dragon_breathe_fire", "dragon_fly", "dragon_roar"]
     },
@@ -237,6 +242,7 @@ export const petConfig = {
     avatarAssets: {
       modelUrl: "models/chicken.glb",
       textureUrl: "textures/chicken_texture.png",
+      imageUrl: "assets/chicken.jpg",
       idleAnimation: "chicken_idle",
       specialAnimations: ["chicken_peck", "chicken_flap", "chicken_strut"]
     },
@@ -274,6 +280,7 @@ export const petConfig = {
     avatarAssets: {
       modelUrl: "models/fawn.glb",
       textureUrl: "textures/fawn_texture.png",
+      imageUrl: "assets/fawn.jpg",
       idleAnimation: "fawn_idle",
       specialAnimations: ["fawn_run", "fawn_blink", "fawn_sleep"]
     },

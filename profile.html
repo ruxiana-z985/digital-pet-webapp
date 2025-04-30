@@ -60,29 +60,44 @@ body {
 
     <div class="pet-grid">
         <div class="pet-item" data-pet="dog">
-          <img src="assets/dog.png" alt="dog">
+          <img src="assets/dog.jpg" alt="dog">
         </div>
         <div class="pet-item" data-pet="bird">
-          <img src="assets/bird.png" alt="bird">
+          <img src="assets/bird.jpg" alt="bird">
         </div>
         <div class="pet-item" data-pet="cat">
-          <img src="assets/cat.png" alt="cat">
+          <img src="assets/cat.jpg" alt="cat">
         </div>
         <div class="pet-item" data-pet="panda">
-          <img src="assets/panda.png" alt="panda">
+          <img src="assets/panda.jpg" alt="panda">
         </div>
         <div class="pet-item" data-pet="dragon">
-          <img src="assets/dainosor.png" alt="dragon">
+          <img src="assets/dragon.jpg" alt="dragon">
         </div>
         <div class="pet-item" data-pet="fawn">
-          <img src="assets/deer.png" alt="fawn">
+          <img src="assets/fawn.jpg" alt="fawn">
         </div>
         <div class="pet-item" data-pet="chicken">
-          <img src="assets/lukku.png" alt="chicken">
+          <img src="assets/chicken.jpg" alt="chicken">
         </div>
       </div>
       
   </div>
+
+  <script>
+    document.querySelectorAll('.pet-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const petName = item.getAttribute('data-pet');
+        
+        // Save to localStorage
+        localStorage.setItem('petType', petName);
+        
+        // Redirect to chat.html
+        window.location.href = 'chat.html';
+      });
+    });
+  </script>
+  
 
 </body>
 </html>

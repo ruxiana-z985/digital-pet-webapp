@@ -121,7 +121,6 @@
   </div>
 
   <script>
-    // Toggle between forms
     const signupForm = document.getElementById("signupForm");
     const loginForm = document.getElementById("loginForm");
     const toggleLink = document.getElementById("toggleLink");
@@ -136,30 +135,8 @@
       toggleText.innerHTML = isSignup
         ? `Already have an account? <a id="toggleLink">Login</a>`
         : `Don’t have an account? <a id="toggleLink">Sign Up</a>`;
-      // re-bind toggle after replacement
       document.getElementById("toggleLink").addEventListener("click", () => toggleLink.click());
     });
-
-    // Encode Function
-    function encode(input) {
-      let encoded = "";
-      for (let char of input) {
-        const ascii = char.charCodeAt(0);
-        const encoding = ["hex", "binary", "octal"][Math.floor(Math.random() * 3)];
-        switch (encoding) {
-          case "hex":
-            encoded += ascii.toString(16) + " ";
-            break;
-          case "binary":
-            encoded += ascii.toString(2) + " ";
-            break;
-          case "octal":
-            encoded += ascii.toString(8) + " ";
-            break;
-        }
-      }
-      return encoded.trim();
-    }
 
     // Signup Logic
     signupForm.addEventListener("submit", (e) => {
@@ -168,14 +145,16 @@
       const username = document.getElementById("signupUsername").value;
       const password = document.getElementById("signupPassword").value;
 
-      const salt = Math.random().toString(16).slice(2, 8);
-      const secret = `${username}:${encode(password)}:${salt}`;
-      const hash = CryptoJS.SHA256(secret).toString();
+      const salt = Math.random().toString(36).substring(2, 10); // consistent-length random salt
+      const hash = CryptoJS.SHA256(password + salt).toString();
 
       localStorage.setItem(username, JSON.stringify({ email, hash, salt }));
 
       alert("Signup successful!");
+  
       signupForm.reset();
+      window.location.href = "profile.html";
+
     });
 
     // Login Logic
@@ -191,11 +170,13 @@
       }
 
       const { salt, hash: storedHash } = storedData;
-      const secret = `${identifier}:${encode(password)}:${salt}`;
-      const hash = CryptoJS.SHA256(secret).toString();
+      const hash = CryptoJS.SHA256(password + salt).toString();
 
       if (hash === storedHash) {
         alert("Login successful!");
+        loginForm.reset();
+        window.location.href = "profile.html";
+
       } else {
         alert("Invalid credentials!");
       }

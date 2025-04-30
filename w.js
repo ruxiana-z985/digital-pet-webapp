@@ -2,10 +2,10 @@
 
 import { triggerAnimation} from "./main.js";
 import { petConfig } from "./petConfig.js";
-const apiKey='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';
+const apiKey='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';
 
 const petType = localStorage.getItem('petType');
-const username = localStorage.getItem('username');
+const username = localStorage.getItem('loggedInUser');
 const userInput = document.getElementById('userInput');
 const sendButton = document.getElementById('send-button');
 const loadingIndicator = document.getElementById('loading-indicator');
@@ -15,7 +15,7 @@ const loadingIndicator = document.getElementById('loading-indicator');
 const customStory=petConfig[petType].custom_story;
 const systemPrompt=petConfig[petType].system_prompt;
 const supporterPrompt=petConfig[petType].additional_systemprompt;
-const petName=localStorage.getItem(petName);
+const petName=localStorage.getItem("petName");
 const emotionList=petConfig[petType].emotionsSupported;
 let name = petName || petConfig[petType].displayName; // If petName exists in localStorage, use it, else use default name
 let emotions = emotionList.join(',');

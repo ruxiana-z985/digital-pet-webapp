@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { petConfig } from './petConfig';
-const petType=localStorage.getItem()
+import { petConfig } from './petConfig.js';
+const petType=localStorage.getItem("petType");
 const url=petConfig[petType].avatarAssets.modelUrl;
 
 
@@ -51,11 +51,7 @@ function init() {
       const model = gltf.scene;
       const modelWrapper = new THREE.Group();
       modelWrapper.rotation.x = Math.PI;
-      gltf.scene.traverse((child) => {
-        if (child.isBone && child.name === "bip001_head_011") {
-          headBone = child;
-        }
-      });
+      
       
 
       const box = new THREE.Box3().setFromObject(model);
